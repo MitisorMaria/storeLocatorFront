@@ -1,5 +1,23 @@
-<div>
-  <agm-map [latitude]='latitude' [longitude]='longitude'>
-    <agm-marker [latitude]='latitude' [longitude]='longitude'></agm-marker>
-  </agm-map>
+<div class = "row">
+  <div class = "col-sm-3">
+    <div *ngFor="let store of storesList;">
+        Store name: {{store.name}}
+      <br>
+        Store address: {{store.address}}
+      <br>
+      <button type="button" class="btn btn-primary" (click)="updateStore(store);">
+        Edit store
+      </button>
+      <button type="button" class="btn btn-primary" (click)="deleteStore(store);">
+        Delete store
+      </button>
+    </div>
+  </div>
+  <div class = "col">
+    <agm-map [latitude]='latitude' [longitude]='longitude'>
+      <agm-marker [latitude]="store.latitude" [longitude]="store.longitude" *ngFor="let store of storesList;"></agm-marker>
+    </agm-map>
+  </div>
+  
+  
 </div>
