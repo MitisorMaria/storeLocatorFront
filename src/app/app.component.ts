@@ -1,13 +1,7 @@
 import { Component } from '@angular/core';
 import { LocationService } from './location.service';
+import { Store } from './store';
 
-interface Store {
-  id:number,
-  name: string,
-  address: string,
-  latitude: number,
-  longitude: number
-}
 
 @Component({
   selector: 'app-root',
@@ -38,15 +32,32 @@ export class AppComponent {
   }
 
   addStore(store : any) {
-    alert("add store");
+    this.locationService.addStore(store).subscribe(
+      val => {
+        alert("added");
+      },
+      response => {
+      },
+      () => {
+      }
+    )
+    window.location.reload();
   }
 
   updateStore(store : any) {
-    alert("update store");
+    this.locationService.updateStore(store).subscribe(
+      val => {
+        alert("updated");
+      },
+      response => {
+      },
+      () => {
+      }
+    )
+    window.location.reload();
   }
 
   deleteStore(store : Store) {
-    alert("delete store" + store.id);
     this.locationService.deleteStore(store.id).subscribe(
       val => {
       },
@@ -55,5 +66,7 @@ export class AppComponent {
       () => {
       }
     )
+    window.location.reload();
   }
+  
 }

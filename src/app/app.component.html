@@ -18,6 +18,26 @@
       <agm-marker [latitude]="store.latitude" [longitude]="store.longitude" *ngFor="let store of storesList;"></agm-marker>
     </agm-map>
   </div>
+
+  <div class = "col-sm-3">
+    <form #addstore = "ngForm" style="padding-left:1%;" (ngSubmit) = "addStore(addstore.value)">
+      <input type="text" class="form-control" style="width:50%;border-color:lightgray" placeholder="Store name" required name="name" ngModel>
+      <br/>
+      <input type="text" class="form-control" style="width:50%;border-color:lightgray" placeholder="Store address" required name="address" ngModel>
+      <br/>
+      <input type="text" class="form-control" style="width:50%;border-color:lightgray" placeholder="Latitude" required name="latitude" ngModel>
+      <br/>
+      <input type="text" class="form-control" style="width:50%;border-color:lightgray" placeholder="Longitude" required name="longitude" ngModel>
+      <br/>
+    <button type="submit" class="btn btn-primary" style="font-family:candara;border-style:none" value="submit">Add store</button>
+    <!--<div [ngSwitch]="emailSuccessfullySent" style="padding-left:30%;padding-right:20%">
+      <ngb-alert type="success" (closed)="closeAlert()" *ngSwitchCase="true" role="alert">Message sent successfully!</ngb-alert>
+      
+      <ngb-alert type="danger" (closed)="closeAlert()" *ngSwitchCase="false" role="alert">There was an error sending your message.</ngb-alert>
+      <div *ngSwitchDefault></div>
+    </div>  -->  
+  </form>
+</div>
   
   
 </div>
