@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
+import { MainComponent } from './main/main.component';
 import { UpdateComponent } from './update/update.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/', pathMatch: 'full' },
+  { path: '', component: MainComponent },
   { path: 'update/:id', component: UpdateComponent }
 ];
 

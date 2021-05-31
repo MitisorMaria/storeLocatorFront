@@ -30,4 +30,9 @@ export class LocationService {
     return this.http.put(apiurl, store);
   }
 
+  getStoreById(id: number) {
+    let apiurl = "http://localhost:8080/stores/" + id;
+    return this.http.get(apiurl);
+  }
+
 }

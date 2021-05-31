@@ -1,0 +1,43 @@
+<div class="row">
+<div class = "col-sm-3">
+  <h2>
+    Stores list
+  </h2>
+    <div *ngFor="let store of storesList;">
+        Store name: {{store.name}}
+      <br>
+        Store address: {{store.address}}
+      <br>
+      <a href = "update/{{store.id}}">
+      <button type="button" class="btn btn-primary">
+        Edit store
+      </button>
+      </a>
+      <button type="button" class="btn btn-primary" (click)="deleteStore(store);">
+        Delete store
+      </button>
+    </div>
+  </div>
+  <div class = "col">
+    <agm-map [latitude]='latitude' [longitude]='longitude'>
+      <agm-marker [label]="store.address" [latitude]="store.latitude" [longitude]="store.longitude" *ngFor="let store of storesList;"></agm-marker>
+    </agm-map>
+  </div>
+
+  <div class = "col-sm-3">
+    <h2>
+      Add new store
+    </h2>
+    <form #addstore = "ngForm" style="padding-left:1%;" (ngSubmit) = "addStore(addstore.value)">
+      <input type="text" class="form-control" style="width:50%;border-color:lightgray" placeholder="Store name" required name="name" ngModel>
+      <br/>
+      <input type="text" class="form-control" style="width:50%;border-color:lightgray" placeholder="Store address" required name="address" ngModel>
+      <br/>
+      <input type="text" class="form-control" style="width:50%;border-color:lightgray" placeholder="Latitude" required name="latitude" ngModel>
+      <br/>
+      <input type="text" class="form-control" style="width:50%;border-color:lightgray" placeholder="Longitude" required name="longitude" ngModel>
+      <br/>
+    <button type="submit" class="btn btn-primary" style="font-family:candara;border-style:none" value="submit">Add store</button>
+  </form>
+</div>
+</div>

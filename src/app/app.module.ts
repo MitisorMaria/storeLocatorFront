@@ -8,11 +8,13 @@ import { AgmCoreModule } from '@agm/core';
 import { LocationService } from './location.service';
 import { HttpClientModule } from '@angular/common/http';
 import { UpdateComponent } from './update/update.component';
+import { MainComponent } from './main/main.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UpdateComponent
+    UpdateComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
