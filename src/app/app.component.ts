@@ -44,18 +44,6 @@ export class AppComponent {
     window.location.reload();
   }
 
-  updateStore(store : any) {
-    this.locationService.updateStore(store).subscribe(
-      val => {
-        alert("updated");
-      },
-      response => {
-      },
-      () => {
-      }
-    )
-    window.location.reload();
-  }
 
   deleteStore(store : Store) {
     this.locationService.deleteStore(store.id).subscribe(

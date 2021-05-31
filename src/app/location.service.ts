@@ -25,8 +25,8 @@ export class LocationService {
     return this.http.post(apiurl, store);
   }
   
-  updateStore(store : Store) {
-    let apiurl = "http://localhost:8080/stores/";
+  updateStore(id: number, store : Store) {
+    let apiurl = "http://localhost:8080/stores/" + id;
     return this.http.put(apiurl, store);
   }
 

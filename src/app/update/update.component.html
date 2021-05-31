@@ -1,0 +1,11 @@
+<form #updatestore = "ngForm" style="padding-left:1%;" (ngSubmit) = "updateStore(updatestore.value)">
+    <input type="text" class="form-control" style="width:50%;border-color:lightgray" placeholder="Store name" required name="name" ngModel>
+    <br/>
+    <input type="text" class="form-control" style="width:50%;border-color:lightgray" placeholder="Store address" required name="address" ngModel>
+    <br/>
+    <input type="text" class="form-control" style="width:50%;border-color:lightgray" placeholder="Latitude" required name="latitude" ngModel>
+    <br/>
+    <input type="text" class="form-control" style="width:50%;border-color:lightgray" placeholder="Longitude" required name="longitude" ngModel>
+    <br/>
+  <button type="submit" class="btn btn-primary" style="font-family:candara;border-style:none" value="submit">Add store</button> 
+</form>
